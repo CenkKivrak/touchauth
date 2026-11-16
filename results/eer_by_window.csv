@@ -1,0 +1,13 @@
+per_direction,N,test,median_eer,n_users
+False,1,"inter-session (train 1-4, test 5)",0.2103,40
+False,1,"long-term (train 1-5, test 6-7)",0.2881,14
+False,5,"inter-session (train 1-4, test 5)",0.1473,40
+False,5,"long-term (train 1-5, test 6-7)",0.2419,14
+False,10,"inter-session (train 1-4, test 5)",0.11,40
+False,10,"long-term (train 1-5, test 6-7)",0.2062,14
+True,1,"inter-session (train 1-4, test 5)",0.19,40
+True,1,"long-term (train 1-5, test 6-7)",0.2176,14
+True,5,"inter-session (train 1-4, test 5)",0.0924,39
+True,5,"long-term (train 1-5, test 6-7)",0.1597,14
+True,10,"inter-session (train 1-4, test 5)",0.0667,39
+True,10,"long-term (train 1-5, test 6-7)",0.1387,14

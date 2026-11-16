@@ -1,0 +1,535 @@
+Load Data:
+
+(21158, 34)
+41 users
+count      41.000000
+mean      516.048780
+std       230.006951
+min       186.000000
+25%       370.000000
+50%       439.000000
+75%       651.000000
+max      1230.000000
+dtype: float64
+doc_id     1    2    3    4    5    6    7
+user_id                                   
+1         76  103   77   72   73    0    0
+2        278  340  237   64   81  137   93
+3         81  135  127  106  100   91  119
+4         32   41   25   76   67    0    0
+5         50   54  108   56   61   25   59
+6         72   86   77  113  106   26   82
+7        105  155  126   92  113    0    0
+8         45   80   66  113  136   40  138
+9         43   58  106   70   66   29   81
+10        41   45   68   77   66   21   69
+11        31   45   37  116   89   22  105
+12        40   59   42  104   97    0    0
+13        45   57   56   71   76    0    0
+14        73  201  103  175   99    0    0
+15       149  137  140  101  192    0    0
+16        33   34   36   88   82   23   86
+17       120  193  163  113  117    0    0
+18        77  115  103   79   87    0    0
+19        67   56   39   69   62    0    0
+20        43   64   30   75  144    0    0
+21       120  134  117   85   77   98   71
+22        96   99   49   71   59    0    0
+23       157  324  145  189  154    0    0
+24       102   91   81   88   73    0    0
+25       119   70  115   71   57    0    0
+26        63   75   46   33   25    0    0
+27        84  105   65   83   90   62  120
+28       111  143  137  102   87   68   62
+29        88  105   33  100  113    0    0
+30        71   58   51    8   37    0    0
+31        62   78   77   74   79    0    0
+32        32   43   39   58   60   15   57
+33       130  131  108  169  174    0    0
+34       239  162  154   58    0    0    0
+35       154  283  143   96  120  144  123
+36       145  109  108   54   84    0    0
+37        68   61   45  138  112    0    0
+38       143  280  175   72  116    0    0
+39        91  128   63   89   65    0    0
+40        57   68   63   55   69    0    0
+41        23   25   22   67   49    0    0
+direction_flag    1     2     3     4
+doc_id                               
+1               388    96  3149    23
+2               436   107  4060    27
+3               330    78  3158    36
+4                37  1767    15  1771
+5                29  1799    10  1776
+6                46     9   734    12
+7                18   630     9   608
+(plus an additional table that i couldn't fit here)
+
+Clean:
+
+dropped 310 rows (1.47%)
+
+EER Experiments:
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>per_direction</th>
+      <th>N</th>
+      <th>test</th>
+      <th>median_eer</th>
+      <th>n_users</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>False</td>
+      <td>1</td>
+      <td>inter-session (train 1-4, test 5)</td>
+      <td>0.2103</td>
+      <td>40</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>False</td>
+      <td>1</td>
+      <td>long-term (train 1-5, test 6-7)</td>
+      <td>0.2881</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>False</td>
+      <td>5</td>
+      <td>inter-session (train 1-4, test 5)</td>
+      <td>0.1473</td>
+      <td>40</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>False</td>
+      <td>5</td>
+      <td>long-term (train 1-5, test 6-7)</td>
+      <td>0.2419</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>False</td>
+      <td>10</td>
+      <td>inter-session (train 1-4, test 5)</td>
+      <td>0.1100</td>
+      <td>40</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>False</td>
+      <td>10</td>
+      <td>long-term (train 1-5, test 6-7)</td>
+      <td>0.2062</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>True</td>
+      <td>1</td>
+      <td>inter-session (train 1-4, test 5)</td>
+      <td>0.1900</td>
+      <td>40</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>True</td>
+      <td>1</td>
+      <td>long-term (train 1-5, test 6-7)</td>
+      <td>0.2176</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>True</td>
+      <td>5</td>
+      <td>inter-session (train 1-4, test 5)</td>
+      <td>0.0924</td>
+      <td>39</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>True</td>
+      <td>5</td>
+      <td>long-term (train 1-5, test 6-7)</td>
+      <td>0.1597</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>True</td>
+      <td>10</td>
+      <td>inter-session (train 1-4, test 5)</td>
+      <td>0.0667</td>
+      <td>39</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>True</td>
+      <td>10</td>
+      <td>long-term (train 1-5, test 6-7)</td>
+      <td>0.1387</td>
+      <td>14</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+Window Duration:
+
+N= 1  median =   2.2 s   mean =  35.3 s   90th pct =  10.8 s
+N= 5  median =  13.5 s   mean = 116.3 s   90th pct =  52.5 s
+N=10  median =  28.6 s   mean = 144.2 s   90th pct = 100.5 s
+
+Confidence Bands:
+
+inter-session (train 1-4, test 5)
+band      <50 (terminate)  50-89 (step-up)  >=90 (accept)
+genuine                                                  
+genuine                47             1150           1954
+impostor            21438            90495          10342 
+
+band      <50 (terminate)  50-89 (step-up)  >=90 (accept)
+genuine                                                  
+genuine               1.5             36.5           62.0
+impostor             17.5             74.0            8.5 
+
+long-term (train 1-5, test 6-7)
+band      <50 (terminate)  50-89 (step-up)  >=90 (accept)
+genuine                                                  
+genuine                22              506           1238
+impostor            26494            37666           6548 
+
+band      <50 (terminate)  50-89 (step-up)  >=90 (accept)
+genuine                                                  
+genuine               1.2             28.7           70.1
+impostor             37.5             53.3            9.3
+
+Detection Time (impostors):
+
+inter-session (train 1-4, test 5): 1562 attack sessions, 98.0% flagged at some point, median time to first flag = 18.8 s, 90th pct = 39.0 s
+long-term (train 1-5, test 6-7): 1120 attack sessions, 97.9% flagged at some point, median time to first flag = 33.7 s, 90th pct = 164.7 s
+
+Detection Time (genuine):
+
+inter-session (train 1-4, test 5) [GENUINE]: 39 sessions, 71.8% flagged, median first flag = 28.5 s
+long-term (train 1-5, test 6-7) [GENUINE]: 28 sessions, 60.7% flagged, median first flag = 36.3 s
+
+Consecutive-window rule:
+
+inter-session (train 1-4, test 5)
+  k=1 genuine :  71.8% flagged, median first flag =  28.5 s
+  k=1 impostor:  98.0% flagged, median first flag =  18.8 s
+  k=2 genuine :  69.2% flagged, median first flag =  33.8 s
+  k=2 impostor:  97.5% flagged, median first flag =  19.2 s
+  k=3 genuine :  69.2% flagged, median first flag =  34.9 s
+  k=3 impostor:  97.4% flagged, median first flag =  22.1 s
+  k=5 genuine :  66.7% flagged, median first flag =  40.9 s
+  k=5 impostor:  96.7% flagged, median first flag =  27.1 s
+long-term (train 1-5, test 6-7)
+  k=1 genuine :  60.7% flagged, median first flag =  36.3 s
+  k=1 impostor:  97.9% flagged, median first flag =  33.7 s
+  k=2 genuine :  57.1% flagged, median first flag =  37.0 s
+  k=2 impostor:  96.9% flagged, median first flag =  36.1 s
+  k=3 genuine :  57.1% flagged, median first flag =  62.0 s
+  k=3 impostor:  96.3% flagged, median first flag =  42.1 s
+  k=5 genuine :  53.6% flagged, median first flag =  62.6 s
+  k=5 impostor:  95.4% flagged, median first flag =  47.3 s
+
+  Threshold Sweep:
+
+  <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>test</th>
+      <th>threshold</th>
+      <th>k</th>
+      <th>genuine_sessions</th>
+      <th>genuine_flagged_pct</th>
+      <th>genuine_median_s</th>
+      <th>impostor_sessions</th>
+      <th>impostor_flagged_pct</th>
+      <th>impostor_median_s</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>inter-session (train 1-4, test 5)</td>
+      <td>90</td>
+      <td>1</td>
+      <td>39</td>
+      <td>71.8</td>
+      <td>28.5</td>
+      <td>1562</td>
+      <td>98.0</td>
+      <td>18.8</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>inter-session (train 1-4, test 5)</td>
+      <td>90</td>
+      <td>3</td>
+      <td>39</td>
+      <td>69.2</td>
+      <td>34.9</td>
+      <td>1562</td>
+      <td>97.4</td>
+      <td>22.1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>inter-session (train 1-4, test 5)</td>
+      <td>70</td>
+      <td>1</td>
+      <td>39</td>
+      <td>20.5</td>
+      <td>25.9</td>
+      <td>1562</td>
+      <td>67.5</td>
+      <td>22.5</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>inter-session (train 1-4, test 5)</td>
+      <td>70</td>
+      <td>3</td>
+      <td>39</td>
+      <td>15.4</td>
+      <td>31.3</td>
+      <td>1562</td>
+      <td>62.4</td>
+      <td>26.1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>inter-session (train 1-4, test 5)</td>
+      <td>50</td>
+      <td>1</td>
+      <td>39</td>
+      <td>5.1</td>
+      <td>57.1</td>
+      <td>1562</td>
+      <td>29.3</td>
+      <td>26.0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>inter-session (train 1-4, test 5)</td>
+      <td>50</td>
+      <td>3</td>
+      <td>39</td>
+      <td>2.6</td>
+      <td>34.9</td>
+      <td>1562</td>
+      <td>26.6</td>
+      <td>32.4</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>inter-session (train 1-4, test 5)</td>
+      <td>30</td>
+      <td>1</td>
+      <td>39</td>
+      <td>2.6</td>
+      <td>27.1</td>
+      <td>1562</td>
+      <td>8.8</td>
+      <td>26.6</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>inter-session (train 1-4, test 5)</td>
+      <td>30</td>
+      <td>3</td>
+      <td>39</td>
+      <td>2.6</td>
+      <td>34.9</td>
+      <td>1562</td>
+      <td>7.4</td>
+      <td>32.3</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>inter-session (train 1-4, test 5)</td>
+      <td>10</td>
+      <td>1</td>
+      <td>39</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>1562</td>
+      <td>2.0</td>
+      <td>26.7</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>inter-session (train 1-4, test 5)</td>
+      <td>10</td>
+      <td>3</td>
+      <td>39</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>1562</td>
+      <td>1.7</td>
+      <td>29.5</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>long-term (train 1-5, test 6-7)</td>
+      <td>90</td>
+      <td>1</td>
+      <td>28</td>
+      <td>60.7</td>
+      <td>36.3</td>
+      <td>1120</td>
+      <td>97.9</td>
+      <td>33.7</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>long-term (train 1-5, test 6-7)</td>
+      <td>90</td>
+      <td>3</td>
+      <td>28</td>
+      <td>57.1</td>
+      <td>62.0</td>
+      <td>1120</td>
+      <td>96.3</td>
+      <td>42.1</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>long-term (train 1-5, test 6-7)</td>
+      <td>70</td>
+      <td>1</td>
+      <td>28</td>
+      <td>35.7</td>
+      <td>72.8</td>
+      <td>1120</td>
+      <td>84.4</td>
+      <td>39.5</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>long-term (train 1-5, test 6-7)</td>
+      <td>70</td>
+      <td>3</td>
+      <td>28</td>
+      <td>25.0</td>
+      <td>123.4</td>
+      <td>1120</td>
+      <td>79.5</td>
+      <td>48.1</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>long-term (train 1-5, test 6-7)</td>
+      <td>50</td>
+      <td>1</td>
+      <td>28</td>
+      <td>14.3</td>
+      <td>110.1</td>
+      <td>1120</td>
+      <td>60.2</td>
+      <td>53.9</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>long-term (train 1-5, test 6-7)</td>
+      <td>50</td>
+      <td>3</td>
+      <td>28</td>
+      <td>7.1</td>
+      <td>325.3</td>
+      <td>1120</td>
+      <td>54.2</td>
+      <td>61.2</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>long-term (train 1-5, test 6-7)</td>
+      <td>30</td>
+      <td>1</td>
+      <td>28</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>1120</td>
+      <td>37.9</td>
+      <td>61.0</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>long-term (train 1-5, test 6-7)</td>
+      <td>30</td>
+      <td>3</td>
+      <td>28</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>1120</td>
+      <td>34.4</td>
+      <td>77.9</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>long-term (train 1-5, test 6-7)</td>
+      <td>10</td>
+      <td>1</td>
+      <td>28</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>1120</td>
+      <td>16.0</td>
+      <td>97.0</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>long-term (train 1-5, test 6-7)</td>
+      <td>10</td>
+      <td>3</td>
+      <td>28</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>1120</td>
+      <td>12.3</td>
+      <td>116.1</td>
+    </tr>
+  </tbody>
+</table>
+</div>
